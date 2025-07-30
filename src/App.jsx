@@ -1,5 +1,6 @@
 import './App.css'
-
+import Blog from './components/Blogs/Blog'
+import Header from './components/Header/Header'
 
 
 function App() {
@@ -7,8 +8,9 @@ function App() {
 
   return (
     <>
-      <h1 className='text-3xl'>Blog Cafe</h1>
-      <p className=''></p>
+      <Header></Header>
+      <Blog></Blog>
+     
     </>
   )
 }
