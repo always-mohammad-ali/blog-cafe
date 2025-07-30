@@ -9,9 +9,16 @@ import { useState } from 'react'
 function App() {
 
   const [bookMark, setBookMark] = useState([]);
+  const [readingTime, setReadingTime] = useState(0);
 
   const addToBookmark = blog =>{
-    console.log('blog is adding')
+    const newBookmark = [...bookMark, blog]
+    setBookMark(newBookmark)
+  }
+
+  const handleReadingTime = time =>{
+    const totalReadingTime = readingTime + time;
+    setReadingTime(totalReadingTime)
   }
  
 
@@ -20,9 +27,9 @@ function App() {
       <Header></Header>
 
       <main>
-        <div className='mx-auto md:w-5/6 md:flex '>
-          <Blog addToBookmark={addToBookmark}></Blog>
-          <Bookmark></Bookmark>
+        <div className='mx-auto md:w-5/6 md:flex gap-5 mt-8'>
+          <Blog addToBookmark={addToBookmark} handleReadingTime={handleReadingTime}></Blog>
+          <Bookmark bookMark={bookMark} readingTime={readingTime}></Bookmark>
         </div>
           
       </main>
