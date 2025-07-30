@@ -13,7 +13,7 @@ function App() {
       <Header></Header>
 
       <main>
-        <div className='mx-auto md:w-5/6 md:flex bg-red-400'>
+        <div className='mx-auto md:w-5/6 md:flex '>
           <Blog></Blog>
           <Bookmark></Bookmark>
         </div>
