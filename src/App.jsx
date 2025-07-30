@@ -16,9 +16,12 @@ function App() {
     setBookMark(newBookmark)
   }
 
-  const handleReadingTime = time =>{
+  const handleReadingTime = (time, id) =>{
     const totalReadingTime = readingTime + time;
     setReadingTime(totalReadingTime)
+
+    const removeFromBookmark = bookMark.filter(book => book.id !== id)
+    setBookMark(removeFromBookmark)
   }
  
 
